@@ -11,8 +11,6 @@ public class WetDishRack {
 	Semaphore emptyRack;
 	Semaphore fullRack;
 	
-	
-
 	WetDishRack(int rackSize) {
 	    // add correct code here 
 		this.rackSize = rackSize;
@@ -24,7 +22,6 @@ public class WetDishRack {
 		emptyRack = new Semaphore(0);
 		fullRack =  new Semaphore(rackSize);
 	}
-	
 	public void addDish(int dish_id){ //if dish is dirty is is added to rack
 		// add correct code here
 		try{
@@ -52,7 +49,8 @@ public class WetDishRack {
 		catch(InterruptedException e){e.printStackTrace();}
 		cleanedDish = tempArray[wetDish%rackSize];
 		wetDish++;
-		return cleanedDish; 	}
+		return cleanedDish;
+		}
 	
 }
 
